@@ -1,0 +1,71 @@
+{
+  "project_name": "visio-director",
+  "project_type": "AI/ML + SaaS Service",
+  "complexity": "Medium-High",
+  "description": "AI-powered creative director that understands brand strategy, visual intent, and audience psychology to generate vision-aligned design prompts",
+  "language": "Python",
+  "additional_languages": ["JavaScript/TypeScript"],
+  "framework": {
+    "backend": ["LangGraph", "FastAPI", "PostgreSQL + pgvector"],
+    "llm": ["OpenAI GPT-4", "Claude 2.1"],
+    "frontend": ["React", "Next.js"]
+  },
+  "taskmaster_mode": "MEDIUM",
+  "github_enabled": true,
+  "github_repo": "visio-director",
+  "created_at": "2025-11-06",
+  "last_updated": "2025-11-06",
+  "phases": [
+    {
+      "phase": 1,
+      "name": "Core Engine",
+      "duration": "2-3 weeks",
+      "status": "in_progress",
+      "milestones": [
+        "Prompt Architecture design",
+        "LangGraph M-CoT reasoning chain",
+        "PostgreSQL + pgvector schema",
+        "Brand DNA analyzer"
+      ]
+    },
+    {
+      "phase": 2,
+      "name": "Platform Integration",
+      "duration": "2-3 weeks",
+      "status": "pending",
+      "milestones": [
+        "Platform Adapters (Lovart, Runway, Luma, Lovable)",
+        "REST API / GraphQL endpoints",
+        "Brand strategy analyzer"
+      ]
+    },
+    {
+      "phase": 3,
+      "name": "Frontend & UX",
+      "duration": "2 weeks",
+      "status": "pending",
+      "milestones": [
+        "Web UI (React/Next.js)",
+        "Visual Feedback Loop (VFL)"
+      ]
+    },
+    {
+      "phase": 4,
+      "name": "Deployment & Optimization",
+      "duration": "1-2 weeks",
+      "status": "pending",
+      "milestones": [
+        "Docker + Cloud deployment (GCP/AWS)",
+        "Cost optimization (Token management)",
+        "Monitoring & logging"
+      ]
+    }
+  ],
+  "success_metrics": {
+    "prompt_quality": "> 80%",
+    "brand_consistency": "> 4.2/5.0",
+    "user_satisfaction": "> 4.2/5.0",
+    "time_savings": "> 60%",
+    "platform_support": ">= 3"
+  }
+}
