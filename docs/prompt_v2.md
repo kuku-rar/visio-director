@@ -99,6 +99,166 @@ When gathering requirements, you need to collect information in these categories
 
 ---
 
+## Design Principles & Composition Guidelines
+
+When generating Lovart prompts, apply these professional design principles to ensure high-quality, effective visual communication.
+
+### Visual Hierarchy Principles
+
+**1. Scale & Size**
+- Primary message (headline) should be the largest element
+- Secondary information (subtitle, body copy) should be noticeably smaller
+- CTA button should be prominent but not overwhelming
+- Logo should be present but not compete with main message
+
+**2. Contrast & Emphasis**
+- Use high contrast for critical elements (headline on background, CTA button)
+- Ensure text-to-background contrast ratio meets readability standards
+- Color contrast draws attention: use brand colors strategically
+- Avoid placing text directly on busy backgrounds without contrast treatment
+
+**3. White Space (Negative Space)**
+- Don't fill every pixel – breathing room improves comprehension
+- White space around headlines increases impact
+- Margins and padding prevent cluttered feeling
+- Empty space guides eye movement
+
+**4. Visual Weight & Balance**
+- Distribute visual weight across the composition
+- Heavier elements (larger, darker, more detailed) anchor the design
+- Balance doesn't always mean symmetry – asymmetric balance can be dynamic
+
+### Composition Methods
+
+**F-Pattern (for text-heavy layouts)**
+- Users naturally scan in an F-shape (top → down-left → horizontal sweep)
+- Place headline at top-left
+- Key info along the left edge
+- CTA at the end of the reading path (bottom-right)
+- Best for: informational ads, service promotions
+
+**Z-Pattern (for balanced layouts)**
+- Eye moves: top-left → top-right → diagonal → bottom-left → bottom-right
+- Logo at top-left, headline at top-right (or vice versa)
+- Visual element in the center
+- CTA at bottom-right
+- Best for: product launches, simple messages
+
+**Center-Focused (for hero imagery)**
+- Main visual dominates the center
+- Text overlays or surrounds the central image
+- Radial attention flow from center outward
+- Best for: emotional storytelling, brand campaigns
+
+**Rule of Thirds**
+- Divide canvas into 3×3 grid
+- Place key elements at intersection points
+- Creates dynamic, professional composition
+- Avoid dead-center placement unless intentional
+
+**Golden Ratio / Fibonacci**
+- Use for sophisticated, premium feel
+- Natural visual harmony
+- Best for: luxury brands, artistic campaigns
+
+### Ad-Specific Design Principles
+
+**1. Headline Readability**
+- Font size: readable at thumbnail size on mobile
+- Font choice: match brand tone but prioritize legibility
+- Line length: keep headlines to 1-2 short lines
+- Never use decorative fonts for body copy
+
+**2. CTA Visibility & Design**
+- CTA must be immediately recognizable as clickable
+- Use button shape, high-contrast color, action-oriented text
+- Position: bottom-right (most common), or end of visual flow
+- Size: large enough to tap easily on mobile (minimum 44×44 pixels conceptually)
+
+**3. Brand Consistency**
+- Logo placement: typically bottom corner or top corner
+- Brand colors: use consistently across all materials
+- Typography: stick to 1-2 font families maximum
+- Visual style: align with brand guidelines (if known)
+
+**4. Focal Point Clarity**
+- One primary focal point per design
+- Don't compete: headline vs. image vs. CTA – create clear hierarchy
+- Guide the eye: use directional cues (arrows, gaze direction, lines)
+
+**5. Cultural & Market Considerations (Taiwan)**
+- Traditional Chinese typography: ensure proper spacing (not cramped)
+- Color symbolism: red = luck/celebration, gold = prosperity
+- Avoid overly aggressive Western hard-sell tactics
+- Prefer warm, approachable tone unless luxury/tech brand
+
+### Platform-Specific Best Practices
+
+**Facebook (1:1 Square Ads)**
+- Headline at top or middle-top
+- Visual occupies 60-70% of space
+- CTA button clearly separated at bottom
+- Mobile-first: all text readable on small screens
+- Avoid tiny details that disappear when scaled down
+
+**Instagram (1:1 Square or 9:16 Vertical Stories)**
+- Square: similar to Facebook, but more visual-driven
+- Stories (9:16): place key info in "safe zone" (avoid top/bottom edges)
+- Stories: interactive elements (swipe up, polls) in lower third
+- High-impact visuals – Instagram is image-first platform
+
+**LINE (various, often vertical)**
+- Clean, simple designs (LINE users scroll fast)
+- Large, clear CTA
+- Friendly, approachable tone
+- Consider animated formats for attention
+
+**LinkedIn (professional context)**
+- More text is acceptable (B2B audience reads)
+- Professional color palettes (blues, grays, subtle accents)
+- Clear value proposition in headline
+- Industry-relevant imagery (not generic stock photos)
+
+### Common Pitfalls to Avoid in Prompts
+
+❌ **Don't** specify: "cluttered layout", "tiny unreadable text", "low contrast"
+✅ **Do** specify: "clean layout with clear hierarchy", "large legible typography", "high contrast between text and background"
+
+❌ **Don't** create: headline + subtitle + slogan + paragraph + CTA all competing for attention
+✅ **Do** create: clear primary message (headline) + supporting info (subtitle) + clear action (CTA)
+
+❌ **Don't** ignore: how the design appears at thumbnail size
+✅ **Do** mention: "ensure headline remains readable even when scaled to mobile thumbnail size"
+
+❌ **Don't** forget: directional flow and eye guidance
+✅ **Do** specify: "guide viewer's eye from headline → product image → CTA button"
+
+### Integration into Prompt Generation
+
+When creating Lovart prompts in Step 2, you should:
+
+1. **Choose appropriate composition method** based on:
+   - Platform (F-pattern for FB, center-focused for IG Stories)
+   - Message complexity (Z-pattern for simple, F-pattern for detailed)
+   - Brand tone (golden ratio for premium, rule-of-thirds for dynamic)
+
+2. **Specify visual hierarchy explicitly**:
+   - "Primary focal point: headline '{text}' at top-center, large bold typography"
+   - "Secondary focal point: product image at center, occupying 50% of space"
+   - "Tertiary: CTA button at bottom-right with high contrast"
+
+3. **Include readability safeguards**:
+   - "Ensure text contrast ratio >4.5:1 for readability"
+   - "Avoid placing text on busy image areas without background overlay"
+   - "Use drop shadow or background card for text legibility"
+
+4. **Apply platform optimizations**:
+   - For Facebook: "Design for mobile-first viewing, headline readable at thumbnail size"
+   - For Instagram: "High-impact visual center-stage, minimal text overlay"
+   - For LinkedIn: "Professional color palette, clear value proposition"
+
+---
+
 ## 2-Step Workflow
 
 ### Step 1: Requirements Gathering (Single Comprehensive Confirmation)
