@@ -400,60 +400,200 @@
 
 #### 2.2 生成英文 Lovart 提示詞
 
-使用者選擇策略後，生成完整的英文提示詞。
+使用者選擇策略後，生成精簡的英文提示詞。
 
-**提示詞結構**（每個選項）：
+**重要原則：精簡優於冗長**
+- 圖像生成模型需要清晰、精確的指令，而非詳細論述
+- 目標：150-250 tokens（取決於複雜度）
+- 避免重複描述相同概念
+- 專注於視覺輸出的核心要素
+
+---
+
+**提示詞結構選擇：**
+
+根據設計複雜度，選擇適合的結構：
+
+### 選項 A：緊湊版（Compact）~150 tokens
+
+適用於：簡單設計、單一焦點、清晰訊息
 
 ```markdown
 ## Lovart Prompt Option X
 
-**Task Description**
-Create a [format] for [brand] promoting [service/product] for the Taiwan market.
+[Format] for [brand/service]: [core visual description in 1-2 sentences].
 
-**Composition & Visual Flow**
-- Primary focal point: [main headline position and emphasis]
-- Secondary focal point: [UI/product/people placement and role]
-- Tertiary elements: [subtitle, paragraph, logo positions]
-- CTA placement: [specific position like bottom-right corner]
-- Visual hierarchy: [describe eye flow from headline → visual → CTA]
-- Reference image integration: [if applicable, specify which aspects to follow]
+Main headline "[text]" in [language] at [position], [size/style]. Subtitle "[text]" at [position]. CTA button "[text]" at [position]. [Key visual elements] in [style], [color palette]. Logo at [position].
 
-**Copy Embedding** (Preserve Original Language)
-- Display the main headline in [language]: "[exact text]" using [font treatment].
-- Add the subtitle in [language]: "[exact text]" positioned [location].
-- Include the slogan in [language]: "[exact text]" as [treatment].
-- Show the CTA label in [language]: "[exact text]" on a [button style].
-[Include paragraph if applicable]
-
-**Visual Style & Atmosphere**
-Style: [specific style keywords like "futuristic glassmorphism UI", "minimal flat design", "kawaii 3D render"]
-Mood: [atmospheric description matching tone keywords]
-Color palette: [primary and accent colors with mood descriptors]
-Lighting: [lighting quality and direction]
-[If reference image: Maintain the [specific aspects] from the reference image]
-
-**Key Elements**
-- [Element 1 with specific description]
-- [Element 2 with specific description]
-- [Element 3 with specific description]
-[Ensure alignment with user's key_elements list]
-
-**Style Keywords**
-[comma-separated list of 5-8 style descriptors]
-
-**Negative Prompt**
-cluttered layout, excessive overlapping text, low contrast typography, unreadable tiny fonts, text on busy backgrounds without proper contrast, overly complex UI screens, distorted anatomy, random extra logos or watermarks, generic stock photo aesthetic, loud discount stickers, messy collage composition, inconsistent visual style
-
-**Aspect Ratio**
-[1:1 / 9:16 / 16:9 / etc.]
+Style: [5-8 keywords]
+Negative: cluttered, low contrast text, tiny fonts, busy backgrounds
+Ratio: [1:1 / 9:16 / etc.]
 
 ---
 
 **設計說明** (Traditional Chinese)
-- 核心優勢: [2-3 key strengths of this composition]
-- 適用情境: [when this option works best]
-- 與行銷目標對齊: [how it serves the marketing goal]
+- [1-2 句核心優勢]
+- [與行銷目標對齊說明]
 ```
+
+**緊湊版範例：**
+```
+1:1 Facebook ad for AI customer service platform. Clean futuristic tech aesthetic with glassmorphism UI.
+
+Main headline "AI 客服，5 分鐘上線" in Traditional Chinese at top-center, large bold futuristic font. Subtitle "智能對話引擎，讓客戶服務更高效" below center. CTA "立即免費試用" at bottom-right on gradient button. Central floating chat interface with AI conversation bubbles, minimal icons, subtle grid background. Logo bottom-left.
+
+Style: glassmorphism, futuristic UI, tech blue gradient, high contrast, clean composition, AI-driven, professional
+Negative: cluttered, low contrast text, tiny fonts, busy backgrounds, complex UI
+Ratio: 1:1
+```
+
+---
+
+### 選項 B：平衡版（Balanced）~250 tokens
+
+適用於：中等複雜度、多元素、需要明確構圖指導
+
+```markdown
+## Lovart Prompt Option X
+
+**Scene**
+[Format] for [brand] promoting [service/product]. [1-2 sentences describing core visual concept and composition approach].
+
+**Layout**
+Headline "[text]" in [language]: [position, size, style treatment]
+Subtitle "[text]": [position, relationship to headline]
+CTA "[text]": [position, button treatment]
+[Additional copy if needed]
+Logo: [position]
+
+**Visual Elements**
+[2-4 key elements with brief descriptions, focusing on what they ARE not how they're arranged]
+
+**Style**
+[Detailed style description in 2-3 sentences: visual style, color palette, mood, lighting]
+[If reference image: Match [specific aspects]]
+
+**Keywords**
+[5-8 comma-separated style descriptors]
+
+**Negative**
+[Core items to avoid: 3-5 most important]
+
+**Ratio**
+[1:1 / 9:16 / etc.]
+
+---
+
+**設計說明** (Traditional Chinese)
+- 核心優勢: [2-3 points]
+- 適用情境: [when this works best]
+- 與行銷目標對齊: [how it serves the goal]
+```
+
+**平衡版範例：**
+```
+1:1 Facebook ad for Taiwan AI customer service platform. Futuristic glassmorphism design with headline-first hierarchy, central UI demonstration, clear CTA path.
+
+Headline "AI 客服，5 分鐘上線" in Traditional Chinese: top-center, large bold tech-inspired font with subtle glow
+Subtitle "智能對話引擎，讓客戶服務更高效": below central UI, medium weight
+CTA "立即免費試用": bottom-right, high-contrast gradient button
+Logo: bottom-left with subtle shadow
+
+Visual Elements:
+- Glassmorphism chat interface with floating AI conversation bubbles showing natural interactions
+- Clean geometric shapes and minimal efficiency icons
+- Subtle grid pattern background suggesting AI/tech environment
+
+Style:
+Futuristic glassmorphism with clean tech aesthetic. Tech blue (#0066FF) with white accents, frosted glass 20% opacity. Soft ambient lighting with subtle blue glow from UI. Professional, efficient, trustworthy cutting-edge technology mood.
+
+Keywords: glassmorphism, futuristic UI, tech aesthetic, high contrast, clean composition, AI-driven, professional tech
+Negative: cluttered layout, low contrast, tiny fonts, complex UI, generic stock photo
+Ratio: 1:1
+```
+
+---
+
+### 選項 C：詳細版（Detailed）~350+ tokens
+
+**僅在以下情況使用：**
+- 極度複雜的構圖（5+ 元素）
+- 需要精確還原參考圖片風格
+- 多層次文案配置
+- 特殊視覺效果要求
+
+**一般情況請避免使用詳細版** - 圖像生成模型通常在簡潔指令下表現更好。
+
+如必須使用詳細版，結構如下：
+
+```markdown
+## Lovart Prompt Option X
+
+**Task & Composition**
+[Format] for [brand] promoting [service/product]. [Composition method: F-pattern/Z-pattern/etc.] layout with [describe visual flow in 2-3 sentences].
+
+**Text Placement**
+- Main headline in [language]: "[text]" - [detailed position, size, font treatment, visual effects]
+- Subtitle: "[text]" - [position relative to other elements, styling]
+- [Additional copy elements with detailed placement]
+- CTA: "[text]" - [button position, style, size]
+- Logo: [position and treatment]
+
+**Visual Elements**
+- [Element 1: detailed description including position, style, role in composition]
+- [Element 2: detailed description]
+- [Element 3+: additional elements]
+
+**Style & Atmosphere**
+[Detailed style description: visual aesthetic, specific color codes, lighting direction and quality, mood descriptors, material qualities (glass, metal, etc.)]
+[Reference image integration if applicable: specific aspects to match]
+
+**Style Keywords**
+[8-10 comma-separated descriptors]
+
+**Negative Prompt**
+[Comprehensive list of things to avoid]
+
+**Technical**
+Aspect Ratio: [ratio]
+[Any additional technical requirements]
+
+---
+
+**設計說明** (Traditional Chinese)
+- 核心優勢: [3-4 points]
+- 適用情境: [detailed scenarios]
+- 與行銷目標對齊: [detailed explanation]
+- 技術考量: [platform-specific optimizations]
+```
+
+---
+
+### 如何選擇結構？
+
+**使用緊湊版 (Compact)** 當：
+- ✅ 單一主要訊息
+- ✅ 清晰的視覺焦點
+- ✅ 簡單的元素組合
+- ✅ 標準平台格式（FB 正方形、IG 限時動態等）
+
+**使用平衡版 (Balanced)** 當：
+- ✅ 2-3 個主要元素
+- ✅ 需要明確的視覺層級
+- ✅ 特定風格要求（glassmorphism, 3D render 等）
+- ✅ 需要整合參考圖片特徵
+
+**避免詳細版 (Detailed)**，除非：
+- ⚠️ 極度複雜的構圖（5+ 重要元素）
+- ⚠️ 必須精確還原特定視覺風格
+- ⚠️ 使用者明確要求非常詳細的控制
+
+**經驗法則：當你猶豫時，選擇更簡潔的版本。**
+
+---
+
+**設計說明** (Traditional Chinese)
+- [根據選擇的結構長度相應調整說明詳細度]
 
 #### 2.3 品質保證（內部）
 

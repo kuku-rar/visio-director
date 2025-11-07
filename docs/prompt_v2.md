@@ -400,60 +400,201 @@ Present 1-3 compositional strategies in Traditional Chinese:
 
 #### 2.2 Generate English Lovart Prompts
 
-After user selects strategy, generate complete English prompts.
+After user selects strategy, generate concise English prompts.
 
-**Prompt Structure** (each option):
+**Key Principle: Conciseness Over Verbosity**
+- Image generation models need clear, precise instructions, not detailed essays
+- Target: 150-250 tokens (depending on complexity)
+- Avoid repeating the same concepts
+- Focus on core elements for visual output
+
+---
+
+**Prompt Structure Options:**
+
+Choose appropriate structure based on design complexity:
+
+### Option A: Compact (~150 tokens)
+
+Best for: Simple designs, single focus, clear message
 
 ```markdown
 ## Lovart Prompt Option X
 
-**Task Description**
-Create a [format] for [brand] promoting [service/product] for the Taiwan market.
+[Format] for [brand/service]: [core visual description in 1-2 sentences].
 
-**Composition & Visual Flow**
-- Primary focal point: [main headline position and emphasis]
-- Secondary focal point: [UI/product/people placement and role]
-- Tertiary elements: [subtitle, paragraph, logo positions]
-- CTA placement: [specific position like bottom-right corner]
-- Visual hierarchy: [describe eye flow from headline → visual → CTA]
-- Reference image integration: [if applicable, specify which aspects to follow]
+Main headline "[text]" in [language] at [position], [size/style]. Subtitle "[text]" at [position]. CTA button "[text]" at [position]. [Key visual elements] in [style], [color palette]. Logo at [position].
 
-**Copy Embedding** (Preserve Original Language)
-- Display the main headline in [language]: "[exact text]" using [font treatment].
-- Add the subtitle in [language]: "[exact text]" positioned [location].
-- Include the slogan in [language]: "[exact text]" as [treatment].
-- Show the CTA label in [language]: "[exact text]" on a [button style].
-[Include paragraph if applicable]
-
-**Visual Style & Atmosphere**
-Style: [specific style keywords like "futuristic glassmorphism UI", "minimal flat design", "kawaii 3D render"]
-Mood: [atmospheric description matching tone keywords]
-Color palette: [primary and accent colors with mood descriptors]
-Lighting: [lighting quality and direction]
-[If reference image: Maintain the [specific aspects] from the reference image]
-
-**Key Elements**
-- [Element 1 with specific description]
-- [Element 2 with specific description]
-- [Element 3 with specific description]
-[Ensure alignment with user's key_elements list]
-
-**Style Keywords**
-[comma-separated list of 5-8 style descriptors]
-
-**Negative Prompt**
-cluttered layout, excessive overlapping text, low contrast typography, unreadable tiny fonts, text on busy backgrounds without proper contrast, overly complex UI screens, distorted anatomy, random extra logos or watermarks, generic stock photo aesthetic, loud discount stickers, messy collage composition, inconsistent visual style
-
-**Aspect Ratio**
-[1:1 / 9:16 / 16:9 / etc.]
+Style: [5-8 keywords]
+Negative: cluttered, low contrast text, tiny fonts, busy backgrounds
+Ratio: [1:1 / 9:16 / etc.]
 
 ---
 
-**設計說明** (Traditional Chinese)
-- 核心優勢: [2-3 key strengths of this composition]
-- 適用情境: [when this option works best]
-- 與行銷目標對齊: [how it serves the marketing goal]
+**Design Notes** (Traditional Chinese)
+- [1-2 core strengths]
+- [Marketing goal alignment]
 ```
+
+**Compact Example:**
+```
+1:1 Facebook ad for AI customer service platform. Clean futuristic tech aesthetic with glassmorphism UI.
+
+Main headline "AI 客服，5 分鐘上線" in Traditional Chinese at top-center, large bold futuristic font. Subtitle "智能對話引擎，讓客戶服務更高效" below center. CTA "立即免費試用" at bottom-right on gradient button. Central floating chat interface with AI conversation bubbles, minimal icons, subtle grid background. Logo bottom-left.
+
+Style: glassmorphism, futuristic UI, tech blue gradient, high contrast, clean composition, AI-driven, professional
+Negative: cluttered, low contrast text, tiny fonts, busy backgrounds, complex UI
+Ratio: 1:1
+```
+
+---
+
+### Option B: Balanced (~250 tokens)
+
+Best for: Moderate complexity, multiple elements, clear composition guidance needed
+
+```markdown
+## Lovart Prompt Option X
+
+**Scene**
+[Format] for [brand] promoting [service/product]. [1-2 sentences describing core visual concept and composition approach].
+
+**Layout**
+Headline "[text]" in [language]: [position, size, style treatment]
+Subtitle "[text]": [position, relationship to headline]
+CTA "[text]": [position, button treatment]
+[Additional copy if needed]
+Logo: [position]
+
+**Visual Elements**
+[2-4 key elements with brief descriptions, focusing on WHAT they ARE not HOW they're arranged]
+
+**Style**
+[Detailed style description in 2-3 sentences: visual style, color palette, mood, lighting]
+[If reference image: Match [specific aspects]]
+
+**Keywords**
+[5-8 comma-separated style descriptors]
+
+**Negative**
+[Core items to avoid: 3-5 most important]
+
+**Ratio**
+[1:1 / 9:16 / etc.]
+
+---
+
+**Design Notes** (Traditional Chinese)
+- Core strengths: [2-3 points]
+- Best for: [when this works best]
+- Marketing alignment: [how it serves the goal]
+```
+
+**Balanced Example:**
+```
+1:1 Facebook ad for Taiwan AI customer service platform. Futuristic glassmorphism design with headline-first hierarchy, central UI demonstration, clear CTA path.
+
+Headline "AI 客服，5 分鐘上線" in Traditional Chinese: top-center, large bold tech-inspired font with subtle glow
+Subtitle "智能對話引擎，讓客戶服務更高效": below central UI, medium weight
+CTA "立即免費試用": bottom-right, high-contrast gradient button
+Logo: bottom-left with subtle shadow
+
+Visual Elements:
+- Glassmorphism chat interface with floating AI conversation bubbles showing natural interactions
+- Clean geometric shapes and minimal efficiency icons
+- Subtle grid pattern background suggesting AI/tech environment
+
+Style:
+Futuristic glassmorphism with clean tech aesthetic. Tech blue (#0066FF) with white accents, frosted glass 20% opacity. Soft ambient lighting with subtle blue glow from UI. Professional, efficient, trustworthy cutting-edge technology mood.
+
+Keywords: glassmorphism, futuristic UI, tech aesthetic, high contrast, clean composition, AI-driven, professional tech
+Negative: cluttered layout, low contrast, tiny fonts, complex UI, generic stock photo
+Ratio: 1:1
+```
+
+---
+
+### Option C: Detailed (~350+ tokens)
+
+**Only use when:**
+- Extremely complex composition (5+ elements)
+- Need to precisely match reference image style
+- Multi-layer copy layout
+- Special visual effects requirements
+
+**Avoid Detailed version in general** - image generation models usually perform better with concise instructions.
+
+If Detailed version is necessary:
+
+```markdown
+## Lovart Prompt Option X
+
+**Task & Composition**
+[Format] for [brand] promoting [service/product]. [Composition method: F-pattern/Z-pattern/etc.] layout with [describe visual flow in 2-3 sentences].
+
+**Text Placement**
+- Main headline in [language]: "[text]" - [detailed position, size, font treatment, visual effects]
+- Subtitle: "[text]" - [position relative to other elements, styling]
+- [Additional copy elements with detailed placement]
+- CTA: "[text]" - [button position, style, size]
+- Logo: [position and treatment]
+
+**Visual Elements**
+- [Element 1: detailed description including position, style, role in composition]
+- [Element 2: detailed description]
+- [Element 3+: additional elements]
+
+**Style & Atmosphere**
+[Detailed style description: visual aesthetic, specific color codes, lighting direction and quality, mood descriptors, material qualities (glass, metal, etc.)]
+[Reference image integration if applicable: specific aspects to match]
+
+**Style Keywords**
+[8-10 comma-separated descriptors]
+
+**Negative Prompt**
+[Comprehensive list of things to avoid]
+
+**Technical**
+Aspect Ratio: [ratio]
+[Any additional technical requirements]
+
+---
+
+**Design Notes** (Traditional Chinese)
+- Core strengths: [3-4 points]
+- Best for: [detailed scenarios]
+- Marketing alignment: [detailed explanation]
+- Technical considerations: [platform-specific optimizations]
+```
+
+---
+
+### How to Choose?
+
+**Use Compact** when:
+- ✅ Single primary message
+- ✅ Clear visual focus
+- ✅ Simple element combination
+- ✅ Standard platform format (FB square, IG stories, etc.)
+
+**Use Balanced** when:
+- ✅ 2-3 main elements
+- ✅ Need clear visual hierarchy
+- ✅ Specific style requirements (glassmorphism, 3D render, etc.)
+- ✅ Need to integrate reference image features
+
+**Avoid Detailed** unless:
+- ⚠️ Extremely complex composition (5+ important elements)
+- ⚠️ Must precisely replicate specific visual style
+- ⚠️ User explicitly requests very detailed control
+
+**Rule of thumb: When in doubt, choose the more concise version.**
+
+---
+
+**Design Notes** (Traditional Chinese)
+- [Adjust note detail level based on chosen structure length]
+
 
 #### 2.3 Quality Assurance (Internal)
 
